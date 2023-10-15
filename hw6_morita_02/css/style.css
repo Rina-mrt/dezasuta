@@ -1,0 +1,740 @@
+@charset "utf-8";
+
+/* cssリセット */
+/* 今回は先生からもらったものを貼って対応、今までと違う箇所があるのでコメントあり */
+
+html,
+body,
+header,
+footer,
+main,
+section,
+h1,
+h2,
+h3,
+ul,
+li,
+p,
+dl,
+dt,
+dd {
+    margin: 0;
+    padding: 0;
+    /* 全体で統一されていたので文字色指定 */
+    /* 他のページで異なるときはその限りではない（ケースバイケース） */
+    color: #4f260b;
+    /* 游明朝の入っているcss（検索「游明朝 font-family指定方法」かけて持ってくればよい） */
+    font-family: "A1 Mincho", "游明朝", YuMincho, "Hiragino Mincho ProN W3",
+        "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝",
+        "ＭＳ 明朝", serif;
+    /* 文字間のカーニング（V/Aの方）、paltはメトリクス */
+    font-feature-settings: "palt";
+    scroll-behavior: smooth;
+}
+
+a {
+    /*下線を消す*/
+    text-decoration: none;
+    /*色を消す*/
+    color: inherit;
+    /* アニメーションするcss  今回「0.3secでアニメーションして」*/
+    /* 何か変化があった場合、0.3secでアニメーションしてくれる */
+    transition: 0.3s;
+}
+
+/* のっかると追加されるcss 〜:hoverで〜にのるとという意味*/
+a:hover {
+    /* 半透明 不透明を0〜1で指定（1がイラレの100にあたるため、今回50ということ） */
+    /* 指定がなければ適当に入れる アンカーリンクは不透明度が無難 */
+    opacity: 0.5;
+}
+
+ul {
+    /*左の「・」を消す*/
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+    border: none;
+}
+
+
+/* ヘッダー */
+/* 後から振り返られるように、区分ごとに適宜コメントを入れていくこと */
+
+body {
+    background-color: #e8d9bf
+}
+
+#HEADER {
+    position: relative;
+}
+
+.header-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 7% 0 2.86%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.logo1 {
+    width: 22.7%;
+}
+
+.pc-nav {
+    width: 55%;
+}
+
+.pc-nav ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pc-nav ul li {
+    color: #ffffff;
+    font-size: 18px;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック Medium",
+    "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+    font-weight: bold;
+    width: 105px;
+    text-align: center;
+    margin-right: 54px;
+    /* 1行の場合は行高は入れなくても良い */
+}
+
+.pc-nav ul li:last-child {
+    margin-right: 0;
+}
+
+.slider1 img {
+    width: 100%;
+    /* 画面幅に広げたい画像は、画面幅が大きくなったときにも対応できるよう考慮する */
+}
+
+
+/* ABOUT US */
+
+#ABOUT-US {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.au-text1 {
+    text-align: center;
+}
+
+.au1 {
+    font-size: 30px;
+    margin-top: 104px;
+}
+
+.au2 {
+    font-size: 82px;
+    margin-top: 52px;
+    line-height: 1.17;
+}
+
+.au3 {
+    font-size: 23px;
+    margin-top: 43px;
+    line-height: 1.65;
+}
+
+.au-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.au5-sp {
+    display: none;
+}
+
+.au4 {
+    border-radius : 0 0 82px 0;
+}
+
+.au-text2 {
+    margin-left: 8%;
+}
+
+.au5 {
+    /* ABOUT US 画像 */
+    width: 272px;
+    margin-top: 56px;
+}
+
+.au6 {
+    font-size: 46px;
+    line-height: 1.39;
+    margin-top: 47px;
+}
+
+.au7 {
+    max-width: 410px;
+    font-size: 16px;
+    line-height: 1.625;
+    text-align: justify;
+    margin-top: 23px;
+}
+
+
+/* MENU */
+
+#MENU {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.menu-title {
+    width: 151px;
+    margin: 90px auto 0;
+}
+
+.menu-list ul {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 33px;
+    text-align: left;
+}
+
+.menu-list ul li {  
+    width: 30%;
+}
+
+.menu-img {
+    border-radius : 0 42px 0 0;
+}
+
+h3 {
+    font-size: 38px;
+    margin-top: -13px;
+    margin-left: 13px;
+    color: #d30202;
+}
+
+.menu-text {
+    font-size: 17px;
+    line-height: 1.47;
+    text-align: justify;
+}
+
+
+/* GALLERY */
+
+.gallery-wrap {
+    overflow: hidden;
+}
+
+.gallery-title {
+    width: 245px;
+    margin: 70px auto 17px;
+}
+
+.slider2 {
+    display: flex;
+    width: 100vw;
+}
+
+
+/* EVENT */
+
+#EVENT {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.event-title {
+    width: 174px;
+    margin: 78px auto 31px;
+}
+
+.event-box {
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-width: 3.7px;
+    border-style: solid;
+    border-color: #4f260b;
+    max-width: 1000px;
+    font-size: 23px;
+    line-height: 1.96;
+    padding: 37px  158px;
+}
+
+.event1 {
+    display: flex;
+}
+
+.event2 {
+    display: flex;
+    margin-top: 13px;
+}
+
+.event3 {
+    display: flex;
+    margin-top: 13px;
+}
+
+.date {    
+    margin-right: 56px;
+}
+
+
+.content {
+    text-decoration: underline;
+    text-decoration-color: #4f260b;
+}
+
+
+/* ACCESS */
+
+.access-title {
+    width: 214px;
+    margin: 69px auto 38px;
+}
+
+iframe {
+    width: 100%;
+    vertical-align: bottom;
+}
+
+
+/* footer */
+
+footer {
+    background-color: #ffffff;
+    color: #000000;
+    max-width: 100%;
+}
+
+.footer-wrap {
+    max-width: 1000px;
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 auto;
+    padding-top: 74px;
+    padding-left: 30px;
+}
+
+.logo2 {
+    width: 227px;
+}
+
+.address {
+    font-size: 20px;
+    margin-left: 51px;
+    line-height: 1.95;
+}
+
+.copyright {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 74px;
+    padding-bottom: 74px;
+}
+
+.to-top {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    width: 125px;
+}
+
+
+
+/* 5回目の講義 */
+
+.hamburger {
+    display: none;
+}
+
+.sp-nav {
+    display: none;
+}
+
+
+/* break point 1100px */
+/* グローバルナビゲーションが崩れる手前で適宜設定 */
+@media screen and (max-width: 1100px) {
+    /* pc版は表示しない */
+    .pc-nav {
+        display: none;
+    }
+
+    /* ハンバーガーメニューを作る */
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 23px;
+        right: 26px;
+        /* hoverしたら矢印から指マークに変わる */
+        cursor: pointer;
+        /* 実在する高さを出す */
+        height: 33px;
+        /* スマホメニューが表示されると、メニュー領域の下に表示 */
+        /* それを解消するためにふる */
+        /* 重なり順を制御するもの */
+        z-index: 9999;
+    }
+
+    /* 真ん中の線 */
+    .hamburger span {
+        background: #ffffff;
+        width: 33px;
+        height: 3px;
+        display: block;
+        position: relative;
+        /* 微調整分 */
+        top: 10px;
+        /* 変化前に入れる */
+        /* 変化後だと追加されてアニメーションが始まる…という動きになるから× */
+        transition: 0.3s;
+    }
+
+    /* 上下の線　位置は各々指定 */
+    .hamburger span::before, 
+    .hamburger span::after {
+        content: '';
+        background: #ffffff;
+        width: 33px;
+        height: 3px;
+        display: block;
+        position: absolute;
+        /* 上下の線にも忘れずに入れる */
+        transition: 0.3s;
+    }
+
+    .hamburger span::before {
+        top: 10px;
+    }
+
+    .hamburger span::after {
+        bottom: 10px;
+    }
+
+    /* ×を作る hamburger menuに２つclass名をふる*/
+    /* 回転数は調整可（360°の倍数を足す） */
+    .open span {
+        /* 透明 */
+        background: transparent;
+    }
+
+    .open span::before {
+        top: 0px;
+        transform: rotate(45deg);
+    }
+
+    .open span::after {
+        bottom: 0px;
+        transform: rotate(135deg);
+    }
+
+    /* ハンバーガーメニューを押した後のメニュー表示を作る */
+    .sp-nav {
+        /* 100vh=画面高さ全体 */
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .sp-nav ul {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        /* flexは横並びだけど、縦並びを制御するときにも使える */
+        /* 領域が決まっていて、配置していくときとか */
+        flex-direction: column;
+    }
+
+    .sp-nav ul li {
+        color: #ffffff;
+        font-size: 18px;
+        text-align: center;
+        padding: 15px 0;
+        font-family: "游ゴシック体", YuGothic, "游ゴシック Medium",
+        "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+    }
+
+    .au2 {
+        font-size: 72px;
+    }
+
+    .au3 {
+        font-size: 20px;
+    }
+
+    .au6 {
+        font-size: 38px;
+    }
+}
+
+
+/* 宿題5 スマホ版を作る */
+
+@media screen and (max-width: 767px) {
+    
+    /* header */
+    .logo1 {
+        width: 188px;
+    }
+
+
+    /* ABOUT US */
+
+    #ABOUT-US {
+        padding: 0;
+    }
+    
+    .au-text1 {
+        padding: 0 10px;
+    }
+
+    .au1 {
+        font-size: 4.53vw;
+        margin-top: 44px;
+    }
+    
+    .au2 {
+        font-size: 9.6vw;
+        margin-top: 23px;
+        line-height: 1.16;
+    }
+    
+    .au3 {
+        font-size: 4.27vw;
+        margin-top: 12px;
+        line-height: 1.875;
+    }
+    
+    .nl {
+        display: block;
+    }
+
+    .au-wrap {
+        display: block;
+    }
+
+    .au4 {
+        border-radius : 0 0 0 0;
+    }
+
+    .au4-sp {
+        max-width: 100%;
+    }
+
+    .au5-sp {
+        display: block;
+        width: 43%;
+        margin: 0 auto 18px;
+        padding: 0 10px;
+    }
+
+    .au5 {
+        display: none;
+    }
+
+    .au-text2 {
+        margin-left: 0;
+        padding: 0 10px;
+    }
+
+    .au6 {
+        font-size: 9.6vw;
+        line-height: 1.25;
+        margin-top: 35px;
+    }
+    
+    .au7 {
+        max-width: 100%;
+        font-size: 4.27vw;
+        line-height: 1.75;
+        margin: 28px auto 0;
+    }
+
+
+    /* MENU */
+
+    .menu-title {
+        margin: 50px auto 0;
+        width: 23%;
+    }
+
+    .menu-list ul {
+        display: block;
+        margin-top: 18px;
+    }
+
+    .menu-list ul li {  
+        width: 80%;
+        margin: 37px auto 0;
+    }
+
+    .menu-list ul li:first-child {
+        margin-top: 0;
+    }
+
+    .menu-list ul li img {  
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    h3 {
+        font-size: 10.67vw;
+        margin-top: -26px;
+        margin-left: 13px;
+    }
+    
+    .menu-text {
+        line-height: 1.59;
+        font-size: 4.53vw;
+    }
+
+
+    /* GALLERY */
+
+    .gallery-title {
+        margin: 80px auto 18px;
+        width: 38%;
+    }
+
+
+    /* EVENT */
+
+    .event-title {
+        margin: 30px auto 18px;
+        width: 27%;
+    }
+
+    .event-box {
+        border-width: 3px;
+        font-size: 4.27vw;
+        line-height: 1.125;
+        padding: 20px  27px;
+    }
+
+    .event1,
+    .event2,
+    .event3 {
+        display: block;
+    }
+
+    .content {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+    }
+
+    /* ACCESS */
+
+    .access-title {
+        margin: 26px auto 18px;
+        width: 33%;
+    }
+
+
+    /* footer */
+
+    .footer-wrap {
+        display: block;
+        padding-top: 42px;
+        padding-left: 20px;
+    }
+
+    .logo2 {
+        width: 59%;
+    }
+    
+    .address {
+        font-size: 4.8vw;
+        margin-top: 31px;
+        margin-left: 0;
+        line-height: 1.72;
+    }
+
+    .copyright {
+        font-size: 4.27vw;
+        margin-top: 42px;
+        padding-bottom: 31px;
+    }
+
+    .to-top {
+        right: 10px;
+        bottom: 10px;
+        width: 100px;
+    }
+}
+
+
+/* slider1 */
+
+.slick-dots {
+    bottom: 20px;
+}
+
+.slick-dots li.slick-active button:before {
+    color: #ffffff;
+}
+
+.slick-dots li button:before {
+    color: #ffffff;
+}
+
+
+/* slider2 */
+
+.slider2 img {
+    position: relative;
+}
+
+.p-arrow {
+    width: 40px;
+    height: 40px;
+    border-bottom: solid 5px #ffffff;
+    border-left: solid 5px #ffffff;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 35%;
+    left: 200px;
+    z-index: 2000;
+    cursor: pointer;
+}
+
+.n-arrow {
+    width: 40px;
+    height: 40px;
+    border-top: solid 5px #ffffff;
+    border-right: solid 5px #ffffff;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 35%;
+    right: 200px;
+    z-index: 3000;
+    cursor: pointer;
+}
+
+
+/* lightbox */
+
+#lightbox .lb-image {
+    border: none;
+}
+
+.lb-number {
+    display: none !important;
+}
